@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-
 const obtenerCitasNaruto = async () => {
   const response = await fetch(
     "https://gist.githubusercontent.com/Estebanjgg/2bd6cafe77ce40c9f11086b7e0f5ceec/raw/80e484e69d870e097b7fb3d98ceb74d151cfa068/citas_naruto.json"
@@ -23,9 +22,9 @@ const obtenerImagenes = async () => {
 
 export default function Home() {
   const [citasNaruto, setCitasNaruto] = useState(null);
-  const [imagenData, setImagenData] = useState([]);
+  const [imagenes, setImagenes] = useState([]);
   const [cita, setCita] = useState("");
-  const [imagen, setImagen] = useState("");
+  const [imagenActual, setImagenActual] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,8 +36,7 @@ export default function Home() {
 
     const fetchImagenes = async () => {
       const data = await obtenerImagenes();
-      setImagenData(data);
-      setImagen(obtenerImagenAleatoria(data));
+      setImagenes(data);
     };
     fetchImagenes();
   }, []);
@@ -51,21 +49,10 @@ export default function Home() {
     return `${personaje.personaje}: "${cita}"`;
   };
 
-  const obtenerImagenAleatoria = (imagenData) => {
-    const imagen = imagenData[Math.floor(Math.random() * imagenData.length)];
-    return imagen.url;
-  };
-
-  const actualizarCita = () => {
-    if (citasNaruto) {
+  const actualizarCitaEImagen = () => {
+    if (citasNaruto && imagenes) {
       setCita(obtenerCitaAleatoria(citasNaruto));
-    }
-  };
-
-  const actualizarImagenYcita = () => {
-    if (citasNaruto && imagenData) {
-      setCita(obtenerCitaAleatoria(citasNaruto));
-      setImagen(obtenerImagenAleatoria(imagenData));
+      setImagenActual((imagenActual + 1) % imagenes.length);
     }
   };
 
@@ -75,13 +62,14 @@ export default function Home() {
         <h1 className="title">Generador de Citas de Naruto</h1>
         <div className="carousel-container">
           <Carousel
+            selectedItem={imagenActual}
             showThumbs={false}
             showStatus={false}
             showIndicators={false}
             infiniteLoop
             useKeyboardArrows
           >
-            {imagenData.map((imagen, index) => (
+            {imagenes.map((imagen, index) => (
               <div key={index}>
                 <img src={imagen.url} alt={imagen.alt} className="imagen" />
               </div>
@@ -89,9 +77,9 @@ export default function Home() {
           </Carousel>
         </div>
         <p className="quote">{cita}</p>
-        <button className="btn" onClick={actualizarImagenYcita}>
-  Generar nueva cita e imagen
-</button>
+        <button className="btn" onClick={actualizarCitaEImagen}>
+          Generar nueva cita e imagen
+        </button>
       </main>
       <style jsx>{`
         .container {
