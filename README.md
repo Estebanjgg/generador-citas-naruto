@@ -14,7 +14,7 @@ Para visitar mi página, haz clic en el siguiente botón:
 ![Screenshot_9](https://user-images.githubusercontent.com/91167097/234457555-42efed8c-0a36-48cc-9698-2351ddafe9b4.png)
 
 <p align="center">
-  <a href="https://estebanjgg.github.io/conta-hogar" target="_blank">
+  <a href="https://estebanjgg.github.io/generador-citas-naruto/" target="_blank">
     <img src="https://img.shields.io/badge/Visita%20mi%20pagina-red?style=for-the-badge" alt="Visitar mi página" />
   </a>
 </p>
