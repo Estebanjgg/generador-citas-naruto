@@ -178,7 +178,9 @@ audio {
   background: url("/images/background.jpg") no-repeat center center fixed;
   background-size: cover;
 }
-
+audio {
+  display: none;
+}
 
 
       `}
