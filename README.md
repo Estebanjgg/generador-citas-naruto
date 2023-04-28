@@ -1,38 +1,22 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Generador de citas de Naruto
+En este proyecto, creé un generador de citas de Naruto utilizando una API personalizada que hice yo mismo y trabajando con Next.js.
 
-## Getting Started
+La aplicación es una página web simple que permite a los usuarios generar citas aleatorias de varios personajes de la serie Naruto. La página tiene un botón "Generar" que, cuando se hace clic, genera una cita aleatoria y la muestra en la pantalla.
 
-First, run the development server:
+Para crear este generador de citas de Naruto, primero recopilé una gran cantidad de citas de los personajes de la serie Naruto y las almacené en una base de datos. Luego, creé un servidor utilizando Express para exponer esta base de datos de citas a través de una API personalizada. La API tiene una ruta que devuelve una cita aleatoria cada vez que se llama.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+Una vez que la API estaba en funcionamiento, integré esta API en una aplicación Next.js para crear la página web del generador de citas. La página utiliza fetch para llamar a la API y obtener una cita aleatoria, que luego se muestra en la pantalla.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Para visitar mi página, haz clic en el siguiente botón:
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+![Screenshot_9](https://user-images.githubusercontent.com/91167097/234457555-42efed8c-0a36-48cc-9698-2351ddafe9b4.png)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<p align="center">
+  <a href="https://estebanjgg.github.io/generador-citas-naruto/" target="_blank">
+    <img src="https://img.shields.io/badge/Visita%20mi%20pagina-red?style=for-the-badge" alt="Visitar mi página" />
+  </a>
+</p>
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+¡Gracias por Vitar!
