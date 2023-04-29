@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import CitasNaruto from '../components/CitasNaruto';
-import Footer from '@/components/Footer/Footer';
+
 
 export default function Home() {
   return (
@@ -14,9 +14,13 @@ export default function Home() {
 
       <main>
         <CitasNaruto />
+
+          
       </main>
-    <Footer></Footer>
-  
+    
+   
+ 
     </div>
+    
   );
 }

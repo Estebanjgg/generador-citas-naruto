@@ -13,7 +13,7 @@ const obtenerCitasNaruto = async () => {
 
 const obtenerImagenes = async () => {
   const response = await fetch(
-    "https://gist.githubusercontent.com/Estebanjgg/9a01736b6b5cb96cca509ca7f1ee84d2/raw/03bcef7995e542387c2f659a2a93a3e352344a15/imagenes.json"
+    "https://gist.githubusercontent.com/Estebanjgg/9a01736b6b5cb96cca509ca7f1ee84d2/raw/e3c4390f53caa291e6859b367d5d1145117a2843/imagenes.json"
   );
   const data = await response.json();
   console.log(data);
@@ -26,6 +26,7 @@ export default function CitasNaruto() {
   const [cita, setCita] = useState("");
   const [imagenActual, setImagenActual] = useState(0);
   const [currentSong, setCurrentSong] = useState(0);
+  const [hasPlayed, setHasPlayed] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,6 +55,15 @@ export default function CitasNaruto() {
     if (citasNaruto && imagenes) {
       setCita(obtenerCitaAleatoria(citasNaruto));
       setImagenActual((imagenActual + 1) % imagenes.length);
+
+      
+      if (!hasPlayed) {
+        const audioElement = document.querySelector("audio");
+        if (audioElement) {
+          audioElement.play();
+          setHasPlayed(true);
+        }
+      }
     }
   };
 
@@ -76,11 +86,14 @@ export default function CitasNaruto() {
           infiniteLoop
           useKeyboardArrows
         >
+          
           {imagenes.map((imagen, index) => (
-            <div key={index}>
+            <div key={index} className="imgContainr">
               <img src={imagen.url} alt={imagen.alt} className="imagen" />
             </div>
+            
           ))}
+         
         </Carousel>
       </div>
       <p className="quote">{cita}</p>
@@ -93,10 +106,10 @@ export default function CitasNaruto() {
         onEnded={() => setCurrentSong((currentSong + 1) % songs.length)}
       />
       <div className="song-controls">
-        <button onClick={() => setCurrentSong((currentSong - 1 + songs.length) % songs.length)}>Anterior</button>
-        <button onClick={() => document.querySelector("audio").pause()}>Pausar</button>
-        <button onClick={() => document.querySelector("audio").play()}>Reproducir</button>
-        <button onClick={() => setCurrentSong((currentSong + 1) % songs.length)}>Siguiente</button>
+        <button className="bottonMusic" onClick={() => setCurrentSong((currentSong - 1 + songs.length) % songs.length)}>Anterior</button>
+        <button className="bottonMusic" onClick={() => document.querySelector("audio").pause()}>Pausar</button>
+        <button className="bottonMusic" onClick={() => document.querySelector("audio").play()}>Reproducir</button>
+        <button className="bottonMusic" onClick={() => setCurrentSong((currentSong + 1) % songs.length)}>Siguiente</button>
       </div>
     </div>
   );
