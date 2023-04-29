@@ -1,0 +1,58 @@
+.footercontainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem; 
+  bottom: 0;
+  width: 100%;  
+  font-size: 16px;
+  margin-top: auto;
+
+
+  
+}
+
+@media screen and (max-width: 768px) {
+  .footercontainer {
+    flex-direction: column;
+    text-align: center;
+    font-size: 14px;
+  }
+}
+
+.socialicons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+
+.socialicons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.socialicons a:hover {
+  background-color: #0062cc;
+}
+
+.socialicons a:active {
+  background-color: #0055b7;
+}
+
+.socialicons a:focus {
+  box-shadow: 0 0 0 3px rgba(0, 112, 243, 0.3);
+}
+
+.socialicons i {
+  font-size: 1.2rem;
+}

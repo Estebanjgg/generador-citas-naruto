@@ -87,12 +87,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: url("https://wallpapertag.com/wallpaper/full/9/1/7/1002441-beautiful-hokage-naruto-wallpaper-1920x1080-for-phone.jpg") no-repeat center center fixed;
 }
 
 a {
@@ -104,4 +99,86 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  color: black;
+}
+
+.carousel-container {
+  width: 100%; /* Modificado */
+  max-width: 400px; /* Modificado */
+  margin-bottom: 1rem;
+}
+
+.imagen {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.imagen:hover {
+  transform: scale(1.1);
+}
+
+.quote {
+  font-size: 2rem; /* Modificado */
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem; /* Añadido */
+  color: black;
+  background-color: #0070f3;
+}
+.btn {
+  background-color: #00f300;
+  border: none;
+  border-radius: 5px;
+  color: rgb(8, 8, 8);
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.song-controls {
+display: flex;
+justify-content: center;
+margin-top: 1rem;
+gap: 1rem;
+}
+
+audio {
+display: none;
+}
+
+.container {
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+
+background-size: cover;
+}
+audio {
+display: none;
 }
